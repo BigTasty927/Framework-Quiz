@@ -189,7 +189,34 @@
             transform: translateY(-2px);
         }
 
-        .option.selected {
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: #4facfe;
+            cursor: pointer;
+        }
+
+        .checkbox-option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        .checkbox-option:hover {
+            border-color: #4facfe;
+            background: #ebf8ff;
+            transform: translateY(-1px);
+        }
+
+        .checkbox-option.selected {
             border-color: #4facfe;
             background: #ebf8ff;
             box-shadow: 0 4px 15px rgba(79, 172, 254, 0.2);
@@ -595,15 +622,36 @@
             <!-- Question 11 -->
             <div class="question" id="q11">
                 <div class="section-title">Reflective Insights</div>
-                <div class="question-title">Where do most clients get stuck?</div>
+                <div class="question-title">Where do most clients get stuck? (Check all that apply)</div>
                 <div class="question-options">
-                    <div class="option" data-value="getting-started">Getting started</div>
-                    <div class="option" data-value="staying-consistent">Staying consistent</div>
-                    <div class="option" data-value="building-belief">Building belief in themselves</div>
-                    <div class="option" data-value="clarifying-niche">Clarifying their niche</div>
-                    <div class="option" data-value="managing-time">Managing time or energy</div>
-                    <div class="option" data-value="following-through">Following through</div>
-                    <div class="option" data-value="other">Other</div>
+                    <div class="option checkbox-option" data-value="getting-started">
+                        <input type="checkbox" id="stuck-getting-started" value="getting-started">
+                        <label for="stuck-getting-started">Getting started</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="staying-consistent">
+                        <input type="checkbox" id="stuck-staying-consistent" value="staying-consistent">
+                        <label for="stuck-staying-consistent">Staying consistent</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="building-belief">
+                        <input type="checkbox" id="stuck-building-belief" value="building-belief">
+                        <label for="stuck-building-belief">Building belief in themselves</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="clarifying-niche">
+                        <input type="checkbox" id="stuck-clarifying-niche" value="clarifying-niche">
+                        <label for="stuck-clarifying-niche">Clarifying their niche</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="managing-time">
+                        <input type="checkbox" id="stuck-managing-time" value="managing-time">
+                        <label for="stuck-managing-time">Managing time or energy</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="following-through">
+                        <input type="checkbox" id="stuck-following-through" value="following-through">
+                        <label for="stuck-following-through">Following through</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="other">
+                        <input type="checkbox" id="stuck-other" value="other">
+                        <label for="stuck-other">Other</label>
+                    </div>
                 </div>
                 <div class="instant-feedback" id="feedback11">
                     <div class="feedback-title">Insight:</div>
@@ -623,11 +671,20 @@
             <!-- Question 13 -->
             <div class="question" id="q13">
                 <div class="section-title">Reflective Insights</div>
-                <div class="question-title">What type of support do clients prefer?</div>
+                <div class="question-title">What type of support do clients prefer? (Check all that apply)</div>
                 <div class="question-options">
-                    <div class="option" data-value="diy">DIY – Templates and guides</div>
-                    <div class="option" data-value="dwy">DWY – Coaching and feedback</div>
-                    <div class="option" data-value="dfy">DFY – Done for them</div>
+                    <div class="option checkbox-option" data-value="diy">
+                        <input type="checkbox" id="support-diy" value="diy">
+                        <label for="support-diy">DIY – Templates and guides</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="dwy">
+                        <input type="checkbox" id="support-dwy" value="dwy">
+                        <label for="support-dwy">DWY – Coaching and feedback</label>
+                    </div>
+                    <div class="option checkbox-option" data-value="dfy">
+                        <input type="checkbox" id="support-dfy" value="dfy">
+                        <label for="support-dfy">DFY – Done for them</label>
+                    </div>
                 </div>
                 <div class="instant-feedback" id="feedback13">
                     <div class="feedback-title">Perfect!</div>
@@ -647,17 +704,90 @@
                 </div>
 
                 <div class="framework-preview">
-                    <h3 id="goalHeader">🎯 Strategic Goal for Your Clients</h3>
-                    <p><strong>Goal:</strong> <span id="generatedGoal">Help your clients achieve meaningful transformation</span></p>
-                    <p><strong>This means the client must</strong> <span id="clientMust">stop struggling with common challenges and build systematic approaches</span></p>
-                    <p><strong>In order to</strong> <span id="inOrderTo">achieve their desired outcomes and build lasting success</span></p>
+                    <h3 id="frameworkTitle">📘 From Overwhelmed to Strategic and Sought After</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4>🎯 Goal for the Client (Central Focus)</h4>
+                        <p><strong>• Goal:</strong> <span id="generatedGoal">Help your clients achieve meaningful transformation</span></p>
+                        <p><strong>• This means the client must</strong> <span id="clientMust">stop struggling with common challenges and build systematic approaches</span> <strong>in order to</strong> <span id="inOrderTo">achieve their desired outcomes and build lasting success</span></p>
+                    </div>
                 </div>
 
                 <div class="framework-preview">
-                    <h3>🧱 Three Key Areas for Success</h3>
-                    <p><strong>1. Foundation:</strong> <span id="pillar1">Clear direction and momentum</span></p>
-                    <p><strong>2. Systems:</strong> <span id="pillar2">Repeatable processes and frameworks</span></p>
-                    <p><strong>3. Support:</strong> <span id="pillar3">Guidance and accountability</span></p>
+                    <h4>🧱 Three Needs (Pillars) the Client Must Achieve to Reach This Goal</h4>
+                    
+                    <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Need #1: <span id="pillar1Title">Foundation and Clarity</span></strong></p>
+                        <p>• The client must <span id="pillar1Description">establish a strong foundation for sustainable growth</span></p>
+                        <p><strong>• Client needs to achieve this by:</strong></p>
+                        <ul id="pillar1Steps" style="margin-left: 20px;">
+                            <li>Establishing clear goals and priorities</li>
+                            <li>Creating action plans and timelines</li>
+                            <li>Building accountability systems</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Need #2: <span id="pillar2Title">Strategic Systems</span></strong></p>
+                        <p>• The client must <span id="pillar2Description">build repeatable frameworks and processes</span></p>
+                        <p><strong>• Client needs to achieve this by:</strong></p>
+                        <ul id="pillar2Steps" style="margin-left: 20px;">
+                            <li>Developing templates and standardized approaches</li>
+                            <li>Creating clear workflows and decision-making criteria</li>
+                            <li>Building measurement and feedback systems</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Need #3: <span id="pillar3Title">Support and Accountability</span></strong></p>
+                        <p>• The client must <span id="pillar3Description">secure appropriate support for their journey</span></p>
+                        <p><strong>• Client needs to achieve this by:</strong></p>
+                        <ul id="pillar3Steps" style="margin-left: 20px;">
+                            <li>Identifying support needs</li>
+                            <li>Building support relationships</li>
+                            <li>Maintaining accountability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="framework-preview">
+                    <h4>🪜 Steps to Achieve Each Need</h4>
+                    
+                    <div style="margin: 15px 0;">
+                        <p><strong>Steps to <span id="stepsTitle1">Foundation and Clarity</span></strong></p>
+                        <ol id="actionSteps1" style="margin-left: 20px;">
+                            <li>Identify the key breakthrough habit</li>
+                            <li>Audit current situation and identify specific gaps</li>
+                            <li>Create a 30-day implementation plan</li>
+                        </ol>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <p><strong>Steps to <span id="stepsTitle2">Strategic Systems</span></strong></p>
+                        <ol id="actionSteps2" style="margin-left: 20px;">
+                            <li>Implement recommended tools and systems</li>
+                            <li>Develop templates and procedures</li>
+                            <li>Create measurement systems</li>
+                        </ol>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <p><strong>Steps to <span id="stepsTitle3">Support and Accountability</span></strong></p>
+                        <ol id="actionSteps3" style="margin-left: 20px;">
+                            <li>Identify support needs</li>
+                            <li>Build support systems</li>
+                            <li>Maintain accountability</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="framework-preview" style="background: #fff5f5; border-left: 4px solid #e53e3e;">
+                    <h4>⚠️ What Happens If These Needs Are Not Met?</h4>
+                    <ul style="margin-left: 0; list-style: none;">
+                        <li style="margin: 10px 0;"><strong>• Without <span id="consequence1Title">Foundation and Clarity</span>:</strong> <span id="consequence1Description">Continued struggle with initial progress and momentum-building, leading to frustration and abandonment</span></li>
+                        <li style="margin: 10px 0;"><strong>• Without <span id="consequence2Title">Strategic Systems</span>:</strong> <span id="consequence2Description">Inefficient, inconsistent approach that wastes time and energy without sustainable results</span></li>
+                        <li style="margin: 10px 0;"><strong>• Without <span id="consequence3Title">Support and Accountability</span>:</strong> <span id="consequence3Description">Isolation and lack of proper support, resulting in slower progress and higher likelihood of giving up</span></li>
+                    </ul>
                 </div>
 
                 <div class="next-steps">
@@ -764,9 +894,10 @@
                 }
             }
             
-            // Set up option selection
+            // Set up option selection (both single and multiple choice)
             document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('option')) {
+                if (e.target.classList.contains('option') && !e.target.classList.contains('checkbox-option')) {
+                    // Single choice options (old behavior for other questions)
                     const questionElement = e.target.closest('.question');
                     if (questionElement) {
                         const questionId = questionElement.id;
@@ -793,6 +924,50 @@
                         }
                         
                         console.log('Selected option for question', questionNum);
+                    }
+                }
+            });
+
+            // Handle checkbox changes for multiple choice questions
+            document.addEventListener('change', function(e) {
+                if (e.target.type === 'checkbox') {
+                    const questionElement = e.target.closest('.question');
+                    if (questionElement) {
+                        const questionId = questionElement.id;
+                        const questionNum = parseInt(questionId.replace('q', ''));
+                        
+                        // Update visual state
+                        const optionDiv = e.target.closest('.checkbox-option');
+                        if (e.target.checked) {
+                            optionDiv.classList.add('selected');
+                        } else {
+                            optionDiv.classList.remove('selected');
+                        }
+                        
+                        // Collect all checked values for this question
+                        const checkedBoxes = questionElement.querySelectorAll('input[type="checkbox"]:checked');
+                        const selectedValues = Array.from(checkedBoxes).map(cb => cb.value);
+                        
+                        // Store as array
+                        window.quizState.answers[questionNum] = selectedValues;
+                        
+                        // Show feedback if any options selected
+                        if (selectedValues.length > 0) {
+                            const feedback = document.getElementById('feedback' + questionNum);
+                            if (feedback) {
+                                feedback.classList.add('show');
+                                const content = feedback.querySelector('.feedback-content');
+                                if (content) {
+                                    if (selectedValues.length === 1) {
+                                        content.textContent = 'Great insight! This focus will help create targeted solutions.';
+                                    } else {
+                                        content.textContent = `Excellent! You've identified ${selectedValues.length} key areas where clients get stuck.`;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        console.log('Updated checkbox selection for question', questionNum, ':', selectedValues);
                     }
                 }
             });
@@ -880,7 +1055,7 @@
                 if (currentQ) currentQ.classList.remove('active');
                 
                 // Handle conditional logic
-                if (window.quizState.currentQuestion === 13 && window.quizState.answers[11] !== 'other') {
+                if (window.quizState.currentQuestion === 13 && (!window.quizState.answers[11] || !window.quizState.answers[11].includes('other'))) {
                     window.quizState.currentQuestion = 11;
                 } else {
                     window.quizState.currentQuestion--;
@@ -950,60 +1125,591 @@
         function generateFramework() {
             console.log('Generating framework from answers:', window.quizState.answers);
             
-            // Calculate simple score
-            let score = 0;
-            let total = 0;
+            // Enhanced Clarity Score calculation
+            const clarityAnalysis = calculateEnhancedClarityScore(window.quizState.answers);
             
-            for (let i = 1; i <= 13; i++) {
-                if (i === 12 && window.quizState.answers[11] !== 'other') continue;
-                
-                total += 10;
-                if (window.quizState.answers[i]) {
-                    if (typeof window.quizState.answers[i] === 'string') {
-                        score += Math.min(window.quizState.answers[i].length / 5, 10);
-                    } else {
-                        score += 10;
-                    }
+            const scoreEl = document.getElementById('totalScore');
+            if (scoreEl) scoreEl.textContent = clarityAnalysis.totalScore;
+            
+            // Apply Framework Architect logic
+            const framework = analyzeAndCreateFramework(window.quizState.answers);
+            populateFramework(framework);
+            
+            // Add clarity insights to results
+            addClarityInsights(clarityAnalysis);
+        }
+
+        function calculateEnhancedClarityScore(answers) {
+            let sectionScores = {
+                audienceClarity: 0,     // Questions 1-3: How clear are they on WHO they serve?
+                transformationClarity: 0, // Questions 4-6: How clear is their WHAT (transformation)?
+                methodologyClarity: 0,   // Questions 7-10: How clear is their HOW (methods)?
+                strategicInsight: 0      // Questions 11-13: How strategic is their thinking?
+            };
+            
+            let insights = {
+                strengths: [],
+                opportunities: [],
+                readinessLevel: ""
+            };
+
+            // SECTION 1: Audience Clarity (25 points)
+            // Q1: Work type - specificity matters
+            if (answers[1]) {
+                const workAnswer = answers[1].toLowerCase();
+                if (workAnswer.includes('coach') || workAnswer.includes('consult') || workAnswer.includes('strateg')) {
+                    sectionScores.audienceClarity += 10; // Clear service type
+                } else if (workAnswer.length > 30) {
+                    sectionScores.audienceClarity += 8; // Detailed but less specific
+                } else {
+                    sectionScores.audienceClarity += 5; // Basic response
                 }
             }
+
+            // Q2: Client description - specificity and pain points
+            if (answers[2]) {
+                const clientAnswer = answers[2].toLowerCase();
+                let clientScore = 0;
+                
+                // Check for specific demographics
+                if (clientAnswer.match(/\d+s|twenty|thirty|forty|fifty/)) clientScore += 3; // Age specificity
+                if (clientAnswer.includes('entrepreneur') || clientAnswer.includes('business owner') || clientAnswer.includes('executive')) clientScore += 3; // Clear role
+                if (clientAnswer.includes('struggle') || clientAnswer.includes('challeng') || clientAnswer.includes('frustrat')) clientScore += 4; // Pain awareness
+                if (clientAnswer.length > 80) clientScore += 2; // Comprehensive
+                
+                sectionScores.audienceClarity += Math.min(clientScore, 10);
+            }
+
+            // Q3: Problems - specificity and actionability
+            if (answers[3]) {
+                const problemsAnswer = answers[3];
+                const problemCount = problemsAnswer.split(',').length;
+                let problemScore = 0;
+                
+                if (problemCount >= 2) problemScore += 3; // Multiple problems listed
+                if (problemsAnswer.length > 50) problemScore += 3; // Detailed
+                if (problemsAnswer.toLowerCase().includes('time') || problemsAnswer.toLowerCase().includes('system') || problemsAnswer.toLowerCase().includes('scale')) problemScore += 4; // Common business issues
+                
+                sectionScores.audienceClarity += Math.min(problemScore, 5);
+            }
+
+            // SECTION 2: Transformation Clarity (25 points)
+            // Q4: Successful outcomes - specific and measurable
+            if (answers[4]) {
+                const outcomeAnswer = answers[4].toLowerCase();
+                let outcomeScore = 0;
+                
+                if (outcomeAnswer.includes('feel') || outcomeAnswer.includes('confident') || outcomeAnswer.includes('clear')) outcomeScore += 4; // Emotional outcomes
+                if (outcomeAnswer.includes('system') || outcomeAnswer.includes('process') || outcomeAnswer.includes('framework')) outcomeScore += 4; // Systematic thinking
+                if (outcomeAnswer.length > 80) outcomeScore += 2; // Comprehensive
+                
+                sectionScores.transformationClarity += Math.min(outcomeScore, 10);
+            }
+
+            // Q5: Why it matters - emotional depth
+            if (answers[5]) {
+                const whyAnswer = answers[5].toLowerCase();
+                let whyScore = 0;
+                
+                if (whyAnswer.includes('family') || whyAnswer.includes('freedom') || whyAnswer.includes('fulfil')) whyScore += 4; // Deep motivation
+                if (whyAnswer.includes('scale') || whyAnswer.includes('grow') || whyAnswer.includes('impact')) whyScore += 3; // Business motivation
+                if (whyAnswer.length > 80) whyScore += 3; // Detailed
+                
+                sectionScores.transformationClarity += Math.min(whyScore, 10);
+            }
+
+            // Q6: Goal statement - structure and clarity
+            if (answers[6]) {
+                const goalAnswer = answers[6].toLowerCase();
+                let goalScore = 0;
+                
+                if (goalAnswer.includes('i help')) goalScore += 3; // Follows structure
+                if (goalAnswer.includes('from') && goalAnswer.includes('to')) goalScore += 3; // Clear transformation
+                if (goalAnswer.includes('so they can')) goalScore += 2; // Deeper benefit
+                if (goalAnswer.length > 100) goalScore += 2; // Comprehensive
+                
+                sectionScores.transformationClarity += Math.min(goalScore, 5);
+            }
+
+            // SECTION 3: Methodology Clarity (25 points)
+            // Q7-10: Methods, mistakes, breakthroughs, tools
+            const methodQuestions = [7, 8, 9, 10];
+            methodQuestions.forEach(q => {
+                if (answers[q]) {
+                    const methodAnswer = answers[q].toLowerCase();
+                    let methodScore = 0;
+                    
+                    if (methodAnswer.length > 60) methodScore += 4; // Detailed
+                    if (methodAnswer.includes('system') || methodAnswer.includes('process') || methodAnswer.includes('framework')) methodScore += 3; // Systematic thinking
+                    if (methodAnswer.includes('specific') || methodAnswer.includes('particular') || methodAnswer.includes('exactly')) methodScore += 3; // Specificity
+                    
+                    sectionScores.methodologyClarity += Math.min(methodScore, 6.25);
+                }
+            });
+
+            // SECTION 4: Strategic Insight (25 points)
+            // Q11: Where clients get stuck - strategic awareness
+            if (answers[11]) {
+                sectionScores.strategicInsight += 15; // Good strategic awareness
+                
+                if (answers[11] === 'staying-consistent' || answers[11] === 'following-through') {
+                    insights.strengths.push("Deep understanding of execution challenges");
+                } else if (answers[11] === 'building-belief' || answers[11] === 'clarifying-niche') {
+                    insights.strengths.push("Insight into foundational client needs");
+                }
+            }
+
+            // Q13: Support style - client understanding
+            if (answers[13]) {
+                sectionScores.strategicInsight += 10; // Understanding client preferences
+            }
+
+            // Calculate total score (0-100)
+            const totalScore = Math.round(
+                sectionScores.audienceClarity + 
+                sectionScores.transformationClarity + 
+                sectionScores.methodologyClarity + 
+                sectionScores.strategicInsight
+            );
+
+            // Determine readiness level and insights
+            if (totalScore >= 85) {
+                insights.readinessLevel = "Strategic Leader";
+                insights.strengths.push("Exceptional clarity across all areas");
+                insights.opportunities.push("Ready for advanced strategy implementation");
+            } else if (totalScore >= 70) {
+                insights.readinessLevel = "Strategic Thinker";
+                insights.strengths.push("Strong foundation with clear direction");
+                insights.opportunities.push("Focus on refining execution methods");
+            } else if (totalScore >= 55) {
+                insights.readinessLevel = "Developing Strategist";
+                insights.strengths.push("Good awareness of client needs");
+                insights.opportunities.push("Clarify transformation processes and methods");
+            } else {
+                insights.readinessLevel = "Strategic Explorer";
+                insights.strengths.push("Beginning strategic thinking journey");
+                insights.opportunities.push("Focus on audience clarity and transformation definition");
+            }
+
+            // Add specific section insights
+            if (sectionScores.audienceClarity < 15) {
+                insights.opportunities.push("Sharpen ideal client definition and pain point understanding");
+            }
+            if (sectionScores.transformationClarity < 15) {
+                insights.opportunities.push("Clarify the specific transformation you provide");
+            }
+            if (sectionScores.methodologyClarity < 15) {
+                insights.opportunities.push("Develop more specific methods and breakthrough strategies");
+            }
+
+            return {
+                totalScore,
+                sectionScores,
+                insights,
+                breakdown: {
+                    audienceClarity: Math.round(sectionScores.audienceClarity),
+                    transformationClarity: Math.round(sectionScores.transformationClarity),
+                    methodologyClarity: Math.round(sectionScores.methodologyClarity),
+                    strategicInsight: Math.round(sectionScores.strategicInsight)
+                }
+            };
+        }
+
+        function addClarityInsights(clarityAnalysis) {
+            // Add insights section after the framework
+            const insights = clarityAnalysis.insights;
+            const breakdown = clarityAnalysis.breakdown;
             
-            const finalScore = Math.round((score / total) * 100);
-            const scoreEl = document.getElementById('totalScore');
-            if (scoreEl) scoreEl.textContent = finalScore;
+            const resultsDiv = document.getElementById('results');
+            if (resultsDiv) {
+                // Add detailed breakdown
+                const breakdownHTML = `
+                    <div class="framework-preview" style="margin-top: 30px;">
+                        <h4>📊 Your Clarity Breakdown</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                            <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #4facfe;">${breakdown.audienceClarity}/25</div>
+                                <div style="font-size: 0.9rem; color: #666;">Audience Clarity</div>
+                            </div>
+                            <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #4facfe;">${breakdown.transformationClarity}/25</div>
+                                <div style="font-size: 0.9rem; color: #666;">Transformation Clarity</div>
+                            </div>
+                            <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #4facfe;">${breakdown.methodologyClarity}/25</div>
+                                <div style="font-size: 0.9rem; color: #666;">Methodology Clarity</div>
+                            </div>
+                            <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #4facfe;">${breakdown.strategicInsight}/25</div>
+                                <div style="font-size: 0.9rem; color: #666;">Strategic Insight</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 20px 0;">
+                            <p><strong>Your Strategic Level:</strong> ${insights.readinessLevel}</p>
+                            ${insights.strengths.length > 0 ? `<p><strong>Key Strengths:</strong> ${insights.strengths.join(', ')}</p>` : ''}
+                            ${insights.opportunities.length > 0 ? `<p><strong>Growth Opportunities:</strong> ${insights.opportunities.join(', ')}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                resultsDiv.insertAdjacentHTML('beforeend', breakdownHTML);
+            }
+        }
+
+        function analyzeAndCreateFramework(answers) {
+            // Extract key components from answers
+            const workType = answers[1] || "transformation services";
+            const clientType = answers[2] || "your ideal clients";
+            const problems = answers[3] || "multiple challenges";
+            const transformation = answers[4] || "meaningful change";
+            const why = answers[5] || "achieve their goals";
+            const goalStatement = answers[6] || "";
+            const misunderstanding = answers[7] || "common misconceptions";
+            const mistake = answers[8] || "typical errors";
+            const breakthrough = answers[9] || "key habits";
+            const tools = answers[10] || "recommended resources";
+            const stuckArea = answers[11] || "staying-consistent";
+            const supportStyle = answers[13] || "dwy";
+
+            // Extract client type for personalization
+            const extractedClientType = extractClientType(clientType);
             
-            // Generate personalized content
-            const clientType = extractClientType(window.quizState.answers[2] || 'clients');
-            const transformation = window.quizState.answers[4] || 'meaningful change';
-            const problems = window.quizState.answers[3] || 'common challenges';
-            const why = window.quizState.answers[5] || 'achieve their goals';
-            const stuckArea = window.quizState.answers[11] || 'staying-consistent';
-            const supportStyle = window.quizState.answers[13] || 'dwy';
+            // Create compelling title based on transformation
+            const title = generateCompellingTitle(transformation, problems, workType);
             
-            // Update goal header
-            const goalHeader = document.getElementById('goalHeader');
-            if (goalHeader) goalHeader.textContent = `🎯 Strategic Goal for ${clientType}`;
+            // Generate central goal
+            const goal = generateCentralGoal(goalStatement, extractedClientType, transformation, workType);
             
-            // Update goal statement
-            const generatedGoal = document.getElementById('generatedGoal');
-            if (generatedGoal) generatedGoal.textContent = `Help ${clientType} achieve ${transformation.toLowerCase()}`;
+            // Generate "client must" statement
+            const clientMust = generateClientMustStatement(problems, misunderstanding, mistake);
             
-            // Update client must
-            const clientMust = document.getElementById('clientMust');
-            if (clientMust) clientMust.textContent = `stop ${problems.toLowerCase()} and build systematic approaches`;
+            // Generate "in order to" statement
+            const inOrderTo = generateInOrderToStatement(why);
             
-            // Update in order to
-            const inOrderTo = document.getElementById('inOrderTo');
-            if (inOrderTo) inOrderTo.textContent = cleanWhy(why);
+            // Generate three strategic pillars based on analysis
+            const pillars = generateStrategicPillars(stuckArea, misunderstanding, supportStyle, breakthrough, tools);
             
-            // Update pillars
-            const pillars = getPillars(stuckArea, supportStyle);
-            const pillar1 = document.getElementById('pillar1');
-            const pillar2 = document.getElementById('pillar2');
-            const pillar3 = document.getElementById('pillar3');
+            // Generate action steps for each pillar
+            const actionSteps = generateActionSteps(pillars, breakthrough, tools, supportStyle);
             
-            if (pillar1) pillar1.textContent = pillars[0];
-            if (pillar2) pillar2.textContent = pillars[1];
-            if (pillar3) pillar3.textContent = pillars[2];
+            // Generate consequences
+            const consequences = generateConsequences(pillars, mistake, problems);
+
+            return {
+                title,
+                goal,
+                clientMust,
+                inOrderTo,
+                pillars,
+                actionSteps,
+                consequences
+            };
+        }
+
+        function generateCompellingTitle(transformation, problems, workType) {
+            // Analyze the transformation to create a compelling before/after title
+            const problemKeywords = extractKeywords(problems);
+            const transformationKeywords = extractKeywords(transformation);
+            
+            // Common patterns for compelling titles
+            const titlePatterns = [
+                `From ${problemKeywords} to ${transformationKeywords}`,
+                `From Struggling with ${problemKeywords} to Mastering ${transformationKeywords}`,
+                `From ${problemKeywords} to Strategic and Sought After`,
+                `From Overwhelmed to Strategic and ${transformationKeywords}`,
+                `From Invisible to Influential: ${transformationKeywords}`
+            ];
+            
+            // Select best pattern based on content
+            if (transformation.toLowerCase().includes('confident')) {
+                return `📘 From ${problemKeywords} to Confident and Strategic`;
+            } else if (transformation.toLowerCase().includes('clear')) {
+                return `📘 From ${problemKeywords} to Clear and Focused`;
+            } else if (transformation.toLowerCase().includes('system')) {
+                return `📘 From ${problemKeywords} to Systematic and Successful`;
+            } else {
+                return `📘 From ${problemKeywords} to Strategic and Sought After`;
+            }
+        }
+
+        function extractKeywords(text) {
+            if (!text) return "Challenges";
+            
+            const words = text.toLowerCase().split(/[,\s]+/);
+            const keywords = words.filter(word => 
+                word.length > 3 && 
+                !['with', 'and', 'the', 'are', 'they', 'their', 'have', 'been', 'that', 'this'].includes(word)
+            );
+            
+            return keywords.slice(0, 2).join(' and ') || "Challenges";
+        }
+
+        function generateCentralGoal(goalStatement, clientType, transformation, workType) {
+            // Use their goal statement if it follows the format, otherwise create one
+            if (goalStatement && goalStatement.toLowerCase().includes('i help')) {
+                return goalStatement.replace(/^i help/i, 'Help').trim();
+            }
+            
+            // Create strategic goal based on transformation
+            const cleanTransformation = transformation.toLowerCase()
+                .replace(/^they/, '')
+                .replace(/^clients?/, '')
+                .replace(/^the client/, '')
+                .trim();
+            
+            return `Help ${clientType} achieve ${cleanTransformation} through strategic implementation and systematic approach`;
+        }
+
+        function generateClientMustStatement(problems, misunderstanding, mistake) {
+            const problemList = problems ? problems.split(',').map(p => p.trim().toLowerCase()) : [];
+            const mainProblems = problemList.slice(0, 2);
+            
+            let mustStop = "stop struggling with reactive approaches";
+            
+            if (misunderstanding) {
+                const cleanMisunderstanding = misunderstanding.toLowerCase()
+                    .replace(/^they/, '')
+                    .replace(/^clients?/, '')
+                    .replace(/^the/, '')
+                    .trim();
+                mustStop = `stop ${cleanMisunderstanding}`;
+            } else if (mainProblems.length > 0) {
+                mustStop = `stop ${mainProblems.join(' and ')}`;
+            }
+            
+            return `${mustStop} and embrace strategic, systematic approaches that create sustainable progress`;
+        }
+
+        function generateInOrderToStatement(why) {
+            if (!why) return "achieve their desired outcomes and build lasting success";
+            
+            return why.toLowerCase()
+                .replace(/^because/, '')
+                .replace(/^so that/, '')
+                .replace(/^they can/, '')
+                .replace(/^in order to/, '')
+                .trim();
+        }
+
+        function generateStrategicPillars(stuckArea, misunderstanding, supportStyle, breakthrough, tools) {
+            // Pillar 1: Based on where they get stuck (the main challenge)
+            const pillar1Configs = {
+                'getting-started': {
+                    title: 'Clear Direction and Initial Momentum',
+                    description: 'overcome initial overwhelm and create clear, actionable first steps that build momentum',
+                    steps: [
+                        "Define specific, measurable outcomes for the first 30 days",
+                        "Break down big goals into daily actionable tasks",
+                        "Create accountability systems and regular check-ins"
+                    ]
+                },
+                'staying-consistent': {
+                    title: 'Consistency and Sustainable Systems',
+                    description: 'develop systems and habits that maintain progress even when motivation wanes',
+                    steps: [
+                        "Establish daily and weekly success rituals",
+                        "Build environmental supports that encourage consistency",
+                        "Create tracking systems that provide ongoing feedback"
+                    ]
+                },
+                'building-belief': {
+                    title: 'Confidence and Self-Belief Foundation',
+                    description: 'build unshakeable confidence in their abilities and value proposition',
+                    steps: [
+                        "Document and celebrate past successes and capabilities",
+                        "Develop evidence-based confidence practices",
+                        "Build supportive community and feedback loops"
+                    ]
+                },
+                'clarifying-niche': {
+                    title: 'Focused Positioning and Message Clarity',
+                    description: 'get crystal clear on their positioning and ideal client to focus their efforts',
+                    steps: [
+                        "Research and validate their ideal client profile",
+                        "Develop clear, compelling positioning and messaging",
+                        "Test and refine their value proposition in the market"
+                    ]
+                },
+                'managing-time': {
+                    title: 'Strategic Time and Energy Management',
+                    description: 'master their time and energy to focus on high-impact activities',
+                    steps: [
+                        "Audit current time usage and identify energy drains",
+                        "Implement strategic time-blocking and focus techniques",
+                        "Create boundaries and delegation systems"
+                    ]
+                },
+                'following-through': {
+                    title: 'Execution and Follow-Through Mastery',
+                    description: 'bridge the gap between knowing what to do and actually doing it consistently',
+                    steps: [
+                        "Develop implementation planning and project management skills",
+                        "Create accountability partnerships and regular progress reviews",
+                        "Build obstacle anticipation and problem-solving capabilities"
+                    ]
+                }
+            };
+
+            // Pillar 2: Strategic Systems (universal need)
+            const pillar2 = {
+                title: 'Strategic Systems and Processes',
+                description: 'build repeatable frameworks and processes that eliminate guesswork and create consistent results',
+                steps: [
+                    "Develop templates and standardized approaches for core activities",
+                    "Create clear workflows and decision-making criteria",
+                    "Build measurement and feedback systems to track progress"
+                ]
+            };
+
+            // Pillar 3: Based on support style preference
+            const pillar3Configs = {
+                'diy': {
+                    title: 'Self-Directed Learning and Resource Mastery',
+                    description: 'access the right resources and develop self-directed learning skills to implement independently',
+                    steps: [
+                        "Curate comprehensive resource libraries and learning materials",
+                        "Develop self-assessment and course-correction capabilities",
+                        "Build peer networks and communities for informal support"
+                    ]
+                },
+                'dwy': {
+                    title: 'Guided Support and Strategic Partnership',
+                    description: 'engage with expert guidance and feedback to accelerate their progress',
+                    steps: [
+                        "Establish regular coaching or mentorship relationships",
+                        "Participate in group learning and accountability programs",
+                        "Create feedback loops and strategic guidance systems"
+                    ]
+                },
+                'dfy': {
+                    title: 'Expert Partnership and Strategic Delegation',
+                    description: 'partner with experts who can handle complex implementation while maintaining strategic oversight',
+                    steps: [
+                        "Identify and partner with experienced service providers",
+                        "Maintain strategic oversight while delegating execution",
+                        "Build long-term collaborative relationships with trusted experts"
+                    ]
+                }
+            };
+
+            return [
+                pillar1Configs[stuckArea] || pillar1Configs['staying-consistent'],
+                pillar2,
+                pillar3Configs[supportStyle] || pillar3Configs['dwy']
+            ];
+        }
+
+        function generateActionSteps(pillars, breakthrough, tools, supportStyle) {
+            // Generate specific action steps for each pillar
+            const steps1 = [
+                `Identify and implement the key breakthrough habit: ${breakthrough || 'daily progress tracking'}`,
+                "Conduct comprehensive audit of current situation and identify specific gaps",
+                "Create detailed 30-day implementation plan with weekly milestones and success metrics"
+            ];
+            
+            const steps2 = [
+                `Implement and optimize recommended tools and systems: ${tools || 'productivity and tracking systems'}`,
+                "Develop comprehensive templates and standard operating procedures",
+                "Create robust measurement and feedback systems to track progress and results"
+            ];
+            
+            const supportStepsMap = {
+                'diy': [
+                    "Research and invest in comprehensive resource libraries and learning platforms",
+                    "Join peer communities and professional networks for ongoing support",
+                    "Develop rigorous self-assessment and course-correction protocols"
+                ],
+                'dwy': [
+                    "Schedule regular coaching or mentorship sessions with qualified experts",
+                    "Join structured group programs with built-in accountability and peer support",
+                    "Establish systematic feedback loops and progress review processes"
+                ],
+                'dfy': [
+                    "Interview, vet, and select qualified service providers and strategic partners",
+                    "Establish clear communication protocols and oversight systems",
+                    "Create comprehensive systems for monitoring results and return on investment"
+                ]
+            };
+            
+            const steps3 = supportStepsMap[supportStyle] || supportStepsMap['dwy'];
+            
+            return [steps1, steps2, steps3];
+        }
+
+        function generateConsequences(pillars, mistake, problems) {
+            // Generate specific consequences based on the pillars and user's context
+            const consequences = [
+                `Continued struggle with ${problems || 'fundamental challenges'}, leading to frustration, wasted resources, and eventual abandonment of goals`,
+                `Inefficient, inconsistent approach that wastes time and energy while producing unpredictable results and missed opportunities`,
+                `Isolation and lack of proper support, resulting in slower progress, repeated mistakes, and higher likelihood of giving up before achieving breakthrough results`
+            ];
+            
+            return consequences;
+        }
+
+        function populateFramework(framework) {
+            // Populate the title
+            const titleEl = document.getElementById('frameworkTitle');
+            if (titleEl) titleEl.textContent = framework.title;
+
+            // Populate the goal section
+            const goalEl = document.getElementById('generatedGoal');
+            if (goalEl) goalEl.textContent = framework.goal;
+
+            const clientMustEl = document.getElementById('clientMust');
+            if (clientMustEl) clientMustEl.textContent = framework.clientMust;
+
+            const inOrderToEl = document.getElementById('inOrderTo');
+            if (inOrderToEl) inOrderToEl.textContent = framework.inOrderTo;
+
+            // Populate pillars
+            framework.pillars.forEach((pillar, index) => {
+                const pillarNum = index + 1;
+                
+                const titleEl = document.getElementById(`pillar${pillarNum}Title`);
+                const descEl = document.getElementById(`pillar${pillarNum}Description`);
+                const stepsList = document.getElementById(`pillar${pillarNum}Steps`);
+                
+                if (titleEl) titleEl.textContent = pillar.title;
+                if (descEl) descEl.textContent = pillar.description;
+                
+                if (stepsList) {
+                    stepsList.innerHTML = '';
+                    pillar.steps.forEach(step => {
+                        const li = document.createElement('li');
+                        li.textContent = step;
+                        stepsList.appendChild(li);
+                    });
+                }
+                
+                // Update step titles
+                const stepsTitle = document.getElementById(`stepsTitle${pillarNum}`);
+                if (stepsTitle) stepsTitle.textContent = pillar.title;
+                
+                // Update consequence titles
+                const conseqTitle = document.getElementById(`consequence${pillarNum}Title`);
+                if (conseqTitle) conseqTitle.textContent = pillar.title;
+            });
+
+            // Populate action steps
+            framework.actionSteps.forEach((steps, index) => {
+                const stepsList = document.getElementById(`actionSteps${index + 1}`);
+                if (stepsList) {
+                    stepsList.innerHTML = '';
+                    steps.forEach(step => {
+                        const li = document.createElement('li');
+                        li.textContent = step;
+                        stepsList.appendChild(li);
+                    });
+                }
+            });
+
+            // Populate consequences
+            framework.consequences.forEach((consequence, index) => {
+                const conseqDesc = document.getElementById(`consequence${index + 1}Description`);
+                if (conseqDesc) conseqDesc.textContent = consequence;
+            });
         }
 
         function extractClientType(clientDescription) {
